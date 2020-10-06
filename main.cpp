@@ -3,6 +3,7 @@
 #include <ctime>
 #include <vector>
 #include <string>
+#include <cctype>
 
 int main() {
 
@@ -12,6 +13,7 @@ int main() {
     using std::vector;
     using std::string;
 
+    // №1
     std::srand(std::time(nullptr));
     int array [10];
     for (int i = 0; i<10; i++) {
@@ -21,16 +23,21 @@ int main() {
     cout << endl;
     cout << pow(array[2], 2) + pow(array[3], 2) + pow(array[6], 2) << endl;
 
+    //№2
     int len;
     cin >> len;
     int *arr = new int[len];
     for (int i = 0; i<len; i++) {
-        int a;
-        cin >> a;
-        if (a % 2 == 0) {
-            a *= 2;
+        cin >> arr[i];
+    }
+    for (int i = 0; i<len; i++) {
+        cout << arr[i] << ' ';
+    }
+    cout << endl;
+    for (int i = 0; i<len; i++) {
+        if (arr[i] % 2 == 0) {
+            arr[i] *= 2;
         }
-        arr[i] = a;
     }
     for (int i = 0; i<len; i++)
         cout << arr[i] << ' ';
@@ -44,14 +51,13 @@ int main() {
     cout << s << endl;
     delete [] arr;
 
+    //№3
     int m, el;
     cin >> m;
     vector <int> Mas(m);
-    m = 0;
-    for (int i : Mas) {
+    for (int i=0; i<Mas.size(); i++) {
         cin >> el;
         Mas[m] = el;
-        m++;
     }
     for (int i : Mas)
         cout << i << ' ';
@@ -89,11 +95,13 @@ int main() {
     cin >> l1 >> l2;
     cout << str.substr(l1, l2-l1+1) << endl;
 
-    string stroka("can you can a can as a canner can can a can?");
+    //№4
+    string stroka("Can you can a can as a canner can can a can?");
     string slovo;
     cin >> slovo;
     stroka.pop_back();
     stroka.push_back(' ');
+    stroka[0] = tolower(stroka[0]);
     bool b = true;
     while (b){
         b = false;
@@ -104,7 +112,9 @@ int main() {
         }
     }
     stroka.pop_back();
-    cout << stroka+'?' << endl;
+    stroka.push_back('?');
+    stroka[0] = toupper(stroka[0]);
+    cout << stroka << endl;
 
     return 0;
 }
