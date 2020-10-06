@@ -12,7 +12,7 @@ int main() {
     using std::endl;
     using std::vector;
     using std::string;
-
+/*
     // №1
     std::srand(std::time(nullptr));
     int array [10];
@@ -80,22 +80,27 @@ int main() {
     }
     for (int i : Mas)
         std::cout << i << " ";
-    cout << endl;
+    cout << endl;*/
 
+    //№4
     string str;
-    std::getline (cin, str);
+    std::getline(cin, str);
     cout << str << endl;
     cout << str.length() << endl;
     double k = 0;
-    for (char i : str){
-        if (i == 'q' || i == 'e' || i == 'y' || i == 'u' || i == 'i' || i == 'o' || i == 'a' ) k++;
+    int kol = 0;
+    for (char i : str) {
+        if (i >= 97 && i <= 122) {
+            if (i == 'q' || i == 'e' || i == 'y' || i == 'u' || i == 'i' || i == 'o' || i == 'a')
+                k++; //количество гласных букв в строке
+            kol ++; //количество букв в строке
+        }
     }
-    cout << k/str.length() << endl;
+    cout << (kol-k)/str.length() << endl; //из общего количества букв вычетаем количество гласных и получаем количество согласных, потом берём их отношение к общему количеству символов в строке
     int l1, l2;
     cin >> l1 >> l2;
     cout << str.substr(l1, l2-l1+1) << endl;
 
-    //№4
     string stroka("Can you can a can as a canner can can a can?");
     string slovo;
     cin >> slovo;
