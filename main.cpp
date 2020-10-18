@@ -12,7 +12,7 @@ int main() {
     using std::endl;
     using std::vector;
     using std::string;
-/*
+
     // №1
     std::srand(std::time(nullptr));
     int array [10];
@@ -80,7 +80,7 @@ int main() {
     }
     for (int i : Mas)
         std::cout << i << " ";
-    cout << endl;*/
+    cout << endl;
 
     //№4
     string str;
